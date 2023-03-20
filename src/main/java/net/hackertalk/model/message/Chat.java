@@ -1,11 +1,11 @@
 package net.hackertalk.model.message;
 
-import cn.shware.common.http.Paging;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.*;
+import org.tonggan.common.http.Paging;
 
 import javax.persistence.*;
 import java.util.ArrayList;
