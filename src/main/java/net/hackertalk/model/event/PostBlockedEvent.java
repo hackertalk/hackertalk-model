@@ -2,8 +2,8 @@ package net.hackertalk.model.event;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import net.hackertalk.data.notification.BlockedReason;
-import net.hackertalk.data.post.Post;
+import net.hackertalk.model.notification.BlockedReason;
+import net.hackertalk.model.post.Post;
 
 public class PostBlockedEvent extends NotificationEvent<Post> {
 

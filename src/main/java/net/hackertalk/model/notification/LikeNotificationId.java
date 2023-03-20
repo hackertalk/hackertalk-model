@@ -1,7 +1,7 @@
 package net.hackertalk.model.notification;
 
 import lombok.*;
-import net.hackertalk.data.TargetType;
+import net.hackertalk.model.TargetType;
 
 import java.io.Serializable;
 

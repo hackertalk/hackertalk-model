@@ -5,8 +5,8 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.*;
-import net.hackertalk.data.TargetType;
-import net.hackertalk.data.client.User;
+import net.hackertalk.model.TargetType;
+import net.hackertalk.model.client.User;
 
 import javax.persistence.*;
 import java.util.Objects;

@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.*;
-import net.hackertalk.data.tag.Tag;
+import net.hackertalk.model.tag.Tag;
 
 import javax.persistence.*;
 import java.util.LinkedHashSet;
