@@ -1,0 +1,10 @@
+package net.hackertalk.model.report;
+
+public enum ReportType {
+    UNWELCOME_COMMERCIAL_OR_SPAM,
+    ABUSE_OR_HATE_OR_VIOLENT,
+    NOT_SUITABLE_FOR_DISCUSSION,
+    PORNOGRAPHIC_OR_EXPLICIT,
+    HARASSMENT_OR_BULLYING,
+    OTHER,
+}

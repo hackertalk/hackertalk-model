@@ -1,0 +1,18 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      java: corretto17
+    commands:
+      - cp ./settings.xml /root/.m2/settings.xml
+  pre_build:
+    commands:
+      - pip3 install awscli --upgrade --user
+      - export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain tonggan --domain-owner 694979835041 --region us-east-1 --query authorizationToken --output text`
+  build:
+    commands:
+      - mvn clean package deploy
+cache:
+  paths:
+    - '/root/.m2/**/*'
+    - '/root/.cache/pip/**/*'

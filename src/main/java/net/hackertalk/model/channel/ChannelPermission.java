@@ -1,0 +1,29 @@
+package net.hackertalk.model.channel;
+
+public enum ChannelPermission {
+    // general
+    VIEW_CHANNELS,
+    VIEW_AUDIT_LOG,
+    MANAGE_ROLES,
+    MANAGE_CHANNELS,
+    MANAGE_WEBHOOKS,
+    // membership
+    CREATE_INVITE,
+    CHANGE_NICKNAMES,
+    MANAGE_NICKNAMES,
+    KICK_MEMBERS,
+    BAN_MEMBERS,
+    // text
+    MENTION,
+    SEND_MESSAGES,
+    SEND_MESSAGES_IN_THREADS,
+    CREATE_PUBLIC_THREADS,
+    CREATE_PRIVATE_THREADS,
+    EMBED_LINKS,
+    ATTACH_FILES,
+    MANAGE_EVENTS,
+    MANAGE_THREADS,
+    MANAGE_MESSAGES,
+    READ_MESSAGE_HISTORY,
+    MUTE_MEMBERS,
+}
