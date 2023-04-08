@@ -25,7 +25,7 @@ public class UserAuth {
     private IdentityType identityType;
 
     @Id
-    @Column(nullable = false, length = 32)
+    @Column(name = "identifier", nullable = false, length = 32)
     private String identifier;    // email address, phone number, openid
 
     @Column(name = "user_id", nullable = false)
@@ -33,7 +33,7 @@ public class UserAuth {
     @JsonDeserialize(as = Long.class)
     private Long userId;
 
-    @Column(nullable = false, length = 256)
+    @Column(name = "credential", nullable = false, length = 256)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String credential;    // pass_hash or access_token
 

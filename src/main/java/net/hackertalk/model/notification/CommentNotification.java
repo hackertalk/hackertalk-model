@@ -19,7 +19,7 @@ import javax.persistence.*;
 @Table(schema = "application", name = "comment_notification")
 public class CommentNotification {
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "id", nullable = false, unique = true)
     @JsonDeserialize(as = Long.class)
     @JsonSerialize(using = ToStringSerializer.class)
     private Long id;
@@ -55,7 +55,7 @@ public class CommentNotification {
     @Enumerated(EnumType.STRING)
     private MessageType messageType;
 
-    @Column(nullable = false)
+    @Column(name = "unread", nullable = false)
     private Boolean unread;
 
     @Column(name = "created_at", nullable = false, updatable = false)

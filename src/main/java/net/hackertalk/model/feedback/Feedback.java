@@ -20,7 +20,7 @@ import java.util.Objects;
 public class Feedback {
 
     @Id
-    @Column(nullable = false, unique = true)
+    @Column(name = "id", nullable = false, unique = true)
     @JsonSerialize(using = ToStringSerializer.class)
     @JsonDeserialize(as = Long.class)
     private Long id;
@@ -30,14 +30,14 @@ public class Feedback {
     @JsonDeserialize(as = Long.class)
     private Long fromId;
 
-    @Column(nullable = false, updatable = false)
+    @Column(name = "type", nullable = false, updatable = false)
     @Enumerated(EnumType.STRING)
     private FeedbackType type;
 
-    @Column(nullable = false, updatable = false, length = 2048)
+    @Column(name = "content", nullable = false, updatable = false, length = 2048)
     private String content;
 
-    @Column(nullable = false)
+    @Column(name = "pending", nullable = false)
     private Boolean pending;
 
     @Column(name = "created_at", nullable = false, updatable = false)

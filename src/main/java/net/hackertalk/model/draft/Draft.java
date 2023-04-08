@@ -22,7 +22,7 @@ import java.util.Set;
 public class Draft {
 
     @Id
-    @Column(nullable = false, unique = true)
+    @Column(name = "id", nullable = false, unique = true)
     @JsonSerialize(using = ToStringSerializer.class)
     @JsonDeserialize(as = Long.class)
     private Long id;
@@ -35,11 +35,11 @@ public class Draft {
     @Column(name = "published", nullable = false)
     private Boolean published;
 
-    @Column(nullable = false, length = 128)
+    @Column(name = "title", nullable = false, length = 128)
     private String title;
 
     @Lob
-    @Column(nullable = false)
+    @Column(name = "content", nullable = false)
     private String content;
 
     @Column(name = "created_at", nullable = false, updatable = false)

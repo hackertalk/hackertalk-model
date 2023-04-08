@@ -20,7 +20,7 @@ import java.util.Objects;
 public class ChannelMessage implements Serializable {
 
     @Id
-    @Column(nullable = false, unique = true)
+    @Column(name = "id", nullable = false, unique = true)
     @JsonDeserialize(as = Long.class)
     @JsonSerialize(using = ToStringSerializer.class)
     private Long id;
@@ -35,17 +35,17 @@ public class ChannelMessage implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     private Long fromId;
 
-    @Column(nullable = false, length = 2048)
+    @Column(name = "content", nullable = false, length = 2048)
     private String content;
 
     @Column(name = "content_type", nullable = false)
     @Enumerated(EnumType.STRING)
     private ContentType contentType;
 
-    @Column(nullable = false)
+    @Column(name = "deleted", nullable = false)
     private Boolean deleted;
 
-    @Column(nullable = false)
+    @Column(name = "blocked", nullable = false)
     private Boolean blocked;
 
     @Column(name = "created_at", nullable = false, updatable = false)

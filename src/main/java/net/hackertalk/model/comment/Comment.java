@@ -22,7 +22,7 @@ import java.util.Objects;
 public class Comment implements Serializable {
 
     @Id
-    @Column(nullable = false, unique = true, updatable = false)
+    @Column(name = "id", nullable = false, unique = true, updatable = false)
     @JsonSerialize(using = ToStringSerializer.class)
     @JsonDeserialize(as = Long.class)
     private Long id;
@@ -42,16 +42,16 @@ public class Comment implements Serializable {
     @JsonDeserialize(as = Long.class)
     private Long parentId;
 
-    @Column(nullable = false, length = 6)
+    @Column(name = "lang", nullable = false, length = 6)
     private String lang;
 
-    @Column(nullable = false, length = 2048)
+    @Column(name = "content", nullable = false, length = 2048)
     private String content;
 
-    @Column(nullable = false)
+    @Column(name = "blocked", nullable = false)
     private Boolean blocked = false;
 
-    @Column(nullable = false)
+    @Column(name = "deleted", nullable = false)
     private Boolean deleted = false;
 
     @Column(name = "created_at", nullable = false, updatable = false)

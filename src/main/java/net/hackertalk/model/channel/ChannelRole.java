@@ -20,7 +20,7 @@ import java.util.Objects;
 public class ChannelRole implements Serializable {
 
     @Id
-    @Column(nullable = false, unique = true)
+    @Column(name = "id", nullable = false, unique = true)
     @JsonDeserialize(as = Long.class)
     @JsonSerialize(using = ToStringSerializer.class)
     private Long id;
@@ -30,10 +30,10 @@ public class ChannelRole implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     private Long channelId;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "name", nullable = false, length = 64)
     private String name;
 
-    @Column(nullable = false)
+    @Column(name = "permissions", nullable = false)
     @JsonDeserialize(as = Long.class)
     @JsonSerialize(using = ToStringSerializer.class)
     private Long permissions;

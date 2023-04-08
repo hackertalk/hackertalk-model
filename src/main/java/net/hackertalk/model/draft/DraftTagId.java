@@ -12,8 +12,6 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class DraftTagId implements Serializable {
-
     private Long draftId;
-
     private Long tagId;
 }

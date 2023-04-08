@@ -25,7 +25,7 @@ import java.util.Set;
 public class Post implements Serializable {
 
     @Id
-    @Column(nullable = false, unique = true)
+    @Column(name = "id", nullable = false, unique = true)
     @JsonSerialize(using = ToStringSerializer.class)
     @JsonDeserialize(as = Long.class)
     private Long id;
@@ -35,25 +35,24 @@ public class Post implements Serializable {
     @JsonDeserialize(as = Long.class)
     private Long fromId;
 
-    @Column(nullable = false, length = 6)
+    @Column(name = "lang", nullable = false, length = 6)
     private String lang;
 
-    @Column(nullable = false, length = 128)
+    @Column(name = "title", nullable = false, length = 128)
     private String title;
 
-    @Lob
-    @Column(nullable = false)
+    @Column(name = "content", nullable = false)
     private String content;
 
-    @Column(nullable = false)
+    @Column(name = "ranks", nullable = false)
     @JsonSerialize(using = ToStringSerializer.class)
     @JsonDeserialize(as = Long.class)
     private Long ranks;
 
-    @Column(nullable = false)
+    @Column(name = "deleted", nullable = false)
     private Boolean deleted = false;
 
-    @Column(nullable = false)
+    @Column(name = "blocked", nullable = false)
     private Boolean blocked = false;
 
     @Column(name = "created_at", nullable = false, updatable = false)

@@ -22,7 +22,7 @@ import java.util.Objects;
 public class Report {
 
     @Id
-    @Column(nullable = false, unique = true)
+    @Column(name = "id", nullable = false, unique = true)
     @JsonSerialize(using = ToStringSerializer.class)
     @JsonDeserialize(as = Long.class)
     private Long id;
@@ -41,10 +41,10 @@ public class Report {
     @Enumerated(EnumType.STRING)
     private ReportType reportType;
 
-    @Column(nullable = false, updatable = false, length = 2048)
+    @Column(name = "content", nullable = false, updatable = false, length = 2048)
     private String content;
 
-    @Column(nullable = false)
+    @Column(name = "pending", nullable = false)
     private Boolean pending;
 
     @Column(name = "created_at", nullable = false, updatable = false)

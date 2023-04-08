@@ -18,7 +18,7 @@ import javax.persistence.*;
 public class UserSocialLink {
 
     @Id
-    @Column(nullable = false, unique = true)
+    @Column(name = "id", nullable = false, unique = true)
     @JsonDeserialize(as = Long.class)
     @JsonSerialize(using = ToStringSerializer.class)
     private Long id;
@@ -28,10 +28,10 @@ public class UserSocialLink {
     @JsonSerialize(using = ToStringSerializer.class)
     private Long userId;
 
-    @Column(nullable = false)
+    @Column(name = "platform", nullable = false)
     @Enumerated(EnumType.STRING)
     private SocialMediaPlatform platform;
 
-    @Column(nullable = false, length = 64)
+    @Column(name = "username", nullable = false, length = 64)
     private String username;
 }

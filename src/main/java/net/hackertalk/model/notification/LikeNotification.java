@@ -19,7 +19,7 @@ import javax.persistence.*;
 @Table(schema = "application", name = "like_notification")
 public class LikeNotification {
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "id", nullable = false, unique = true)
     @JsonDeserialize(as = Long.class)
     @JsonSerialize(using = ToStringSerializer.class)
     private Long id;
@@ -47,11 +47,11 @@ public class LikeNotification {
     private TargetType targetType;
 
     @Id
-    @Column(nullable = false, updatable = false)
+    @Column(name = "action", nullable = false, updatable = false)
     @Enumerated(EnumType.STRING)
     private Action action;
 
-    @Column(nullable = false)
+    @Column(name = "unread", nullable = false)
     private Boolean unread;
 
     @Column(name = "created_at", nullable = false, updatable = false)

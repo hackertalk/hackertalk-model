@@ -20,43 +20,43 @@ import java.util.Objects;
 public class User {
 
     @Id
-    @Column(nullable = false, unique = true)
+    @Column(name = "id", nullable = false, unique = true)
     @JsonSerialize(using = ToStringSerializer.class)
     @JsonDeserialize(as = Long.class)
     private Long id;
 
-    @Column(nullable = false, length = 64)
+    @Column(name = "nickname", nullable = false, length = 64)
     private String nickname;
 
-    @Column(nullable = false, length = 16)
+    @Column(name = "username", nullable = false, length = 16)
     private String username;
 
-    @Column(nullable = false, length = 256)
+    @Column(name = "bio", nullable = false, length = 256)
     private String bio;
 
-    @Column(nullable = false, length = 32)
+    @Column(name = "avatar", nullable = false, length = 32)
     private String avatar;
 
-    @Column(nullable = false, length = 32)
+    @Column(name = "cover", nullable = false, length = 32)
     private String cover;
 
-    @Column(nullable = false)
+    @Column(name = "gender", nullable = false)
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
-    @Column(nullable = false, length = 64)
+    @Column(name = "website", nullable = false, length = 64)
     private String website;
 
-    @Column(nullable = false, length = 32)
+    @Column(name = "location", nullable = false, length = 32)
     private String location;
 
-    @Column(nullable = false, length = 10)
+    @Column(name = "birthday", nullable = false, length = 10)
     private String birthday; // MM/DD/YYYY
 
-    @Column(nullable = false)
+    @Column(name = "verified", nullable = false)
     private Boolean verified;
 
-    @Column(nullable = false)
+    @Column(name = "status", nullable = false)
     @Enumerated(EnumType.STRING)
     private UserStatus status;
 

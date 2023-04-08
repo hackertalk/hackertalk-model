@@ -38,7 +38,7 @@ public class ChatMessage {
     @Enumerated(EnumType.STRING)
     private RecipientType recipientType; // 收信人类型
 
-    @Column(nullable = false, length = 2048)
+    @Column(name = "content", nullable = false, length = 2048)
     private String content;
 
     @Column(name = "content_type", nullable = false)

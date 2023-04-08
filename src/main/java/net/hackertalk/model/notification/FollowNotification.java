@@ -18,7 +18,7 @@ import javax.persistence.*;
 @Table(schema = "application", name = "follow_notification")
 public class FollowNotification {
 
-    @Column(nullable = false, unique = true)
+    @Column(name ="id", nullable = false, unique = true)
     @JsonSerialize(using = ToStringSerializer.class)
     @JsonDeserialize(as = Long.class)
     private Long id;
@@ -35,6 +35,7 @@ public class FollowNotification {
     @JsonDeserialize(as = Long.class)
     private Long toId;
 
+    @Column(name = "unread", nullable = false)
     private Boolean unread;
 
     @Column(name = "created_at", nullable = false, updatable = false)
