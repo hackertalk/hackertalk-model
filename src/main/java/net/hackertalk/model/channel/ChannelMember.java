@@ -66,6 +66,7 @@ public class ChannelMember implements Serializable {
     @ManyToMany
     @JoinTable(
             name = "channel_member_role",
+            schema = "application",
             joinColumns = {
                     @JoinColumn(name = "user_id", referencedColumnName = "user_id"),
                     @JoinColumn(name = "channel_id", referencedColumnName = "channel_id")

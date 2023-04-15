@@ -72,6 +72,7 @@ public class Post implements Serializable {
     @ManyToMany
     @JoinTable(
             name = "post_tag",
+            schema = "application",
             joinColumns = @JoinColumn(name = "post_id"),
             inverseJoinColumns = @JoinColumn(name = "tag_id")
     )

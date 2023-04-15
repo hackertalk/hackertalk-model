@@ -51,6 +51,7 @@ public class Topic {
     @ManyToMany
     @JoinTable(
             name = "topic_tag",
+            schema = "application",
             joinColumns = @JoinColumn(name = "topic_id"),
             inverseJoinColumns = @JoinColumn(name = "tag_id")
     )

@@ -52,6 +52,7 @@ public class Draft {
     @ManyToMany
     @JoinTable(
             name = "draft_tag",
+            schema = "application",
             joinColumns = @JoinColumn(name = "draft_id"),
             inverseJoinColumns = @JoinColumn(name = "tag_id")
     )
