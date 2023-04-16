@@ -115,6 +115,17 @@ from application.post_comment_count
               on application.post_comment_count.post_id = application.post_impression_count.post_id;
 
 
+create view post_commenter as
+select application.comment.post_id,
+       application.comment.from_id,
+       min(application.comment.id) as first_comment_id,
+       max(application.comment.id) as last_comment_id
+from application.comment
+where application.comment.blocked = false
+  and application.comment.deleted = false
+group by application.comment.post_id, application.comment.from_id;
+
+
 -- user views --------------------------------------------------------------------------------------
 create view user_checkin_points as
 select application.user.id                               AS user_id,
