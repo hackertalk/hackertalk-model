@@ -42,7 +42,7 @@ public class Tag implements Serializable {
     @ToString.Exclude
     @ElementCollection
     @Column(name = "synonym")
-    @CollectionTable(name = "tag_synonym", joinColumns = @JoinColumn(name = "tag_id", referencedColumnName = "id"))
+    @CollectionTable(schema = "application", name = "tag_synonym", joinColumns = @JoinColumn(name = "tag_id", referencedColumnName = "id"))
     private Set<String> synonyms = new LinkedHashSet<>();
 
     @Override
