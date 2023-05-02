@@ -1,13 +1,13 @@
 package net.hackertalk.model.event;
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 import net.hackertalk.model.notification.BlockedReason;
 import net.hackertalk.model.post.Post;
 
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public class PostUnblockedEvent extends NotificationEvent {
 

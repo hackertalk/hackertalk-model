@@ -1,12 +1,12 @@
 package net.hackertalk.model.event;
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 import net.hackertalk.model.comment.Comment;
 
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public class CommentDeletedEvent extends NotificationEvent {
 
