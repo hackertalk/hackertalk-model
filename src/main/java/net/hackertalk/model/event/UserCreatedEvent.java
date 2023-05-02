@@ -1,13 +1,14 @@
 package net.hackertalk.model.event;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import net.hackertalk.model.client.User;
 
-public class UserCreatedEvent extends NotificationEvent<User> {
+@Data
+@Builder
+@EqualsAndHashCode(callSuper = true)
+public class UserCreatedEvent extends NotificationEvent {
 
-    @JsonCreator
-    public UserCreatedEvent(@JsonProperty("source") User source) {
-        super(source, "USER_CREATED");
-    }
+    private User user;
 }

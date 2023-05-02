@@ -1,25 +1,16 @@
 package net.hackertalk.model.event;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import net.hackertalk.model.comment.Comment;
 
-public class CommentLikedEvent extends NotificationEvent<Comment> {
+@Data
+@Builder
+@EqualsAndHashCode(callSuper = true)
+public class CommentLikedEvent extends NotificationEvent {
 
     private Long fromId;
 
-    @JsonCreator
-    public CommentLikedEvent(@JsonProperty("source") Comment source,
-                             @JsonProperty("fromId") Long fromId) {
-        super(source, "COMMENT_LIKED");
-        this.fromId = fromId;
-    }
-
-    public Long getFromId() {
-        return fromId;
-    }
-
-    public void setFromId(Long fromId) {
-        this.fromId = fromId;
-    }
+    private Comment comment;
 }

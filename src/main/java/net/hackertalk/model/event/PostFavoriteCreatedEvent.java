@@ -1,25 +1,16 @@
 package net.hackertalk.model.event;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import net.hackertalk.model.post.Post;
 
-public class PostFavoriteCreatedEvent extends NotificationEvent<Post> {
+@Data
+@Builder
+@EqualsAndHashCode(callSuper = true)
+public class PostFavoriteCreatedEvent extends NotificationEvent {
 
     private Long fromId;
 
-    @JsonCreator
-    public PostFavoriteCreatedEvent(@JsonProperty("source") Post source,
-                                    @JsonProperty("fromId") Long fromId) {
-        super(source, "POST_FAVORITE_CREATED");
-        this.fromId = fromId;
-    }
-
-    public Long getFromId() {
-        return fromId;
-    }
-
-    public void setFromId(Long fromId) {
-        this.fromId = fromId;
-    }
+    private Post post;
 }

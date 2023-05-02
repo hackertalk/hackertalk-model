@@ -1,24 +1,15 @@
 package net.hackertalk.model.event;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-public class FollowCreatedEvent extends NotificationEvent<Long> {
+@Data
+@Builder
+@EqualsAndHashCode(callSuper = true)
+public class FollowCreatedEvent extends NotificationEvent {
 
     private Long fromId;
 
-    @JsonCreator
-    public FollowCreatedEvent(@JsonProperty("source") Long source,
-                              @JsonProperty("fromId") Long fromId) {
-        super(source, "FOLLOW_CREATED");
-        this.fromId = fromId;
-    }
-
-    public Long getFromId() {
-        return fromId;
-    }
-
-    public void setFromId(Long fromId) {
-        this.fromId = fromId;
-    }
+    private Long toId;
 }

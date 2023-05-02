@@ -1,13 +1,14 @@
 package net.hackertalk.model.event;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import net.hackertalk.model.post.Post;
 
-public class PostCreatedEvent extends NotificationEvent<Post> {
+@Data
+@Builder
+@EqualsAndHashCode(callSuper = true)
+public class PostCreatedEvent extends NotificationEvent {
 
-    @JsonCreator
-    public PostCreatedEvent(@JsonProperty("source") Post source) {
-        super(source, "POST_CREATED");
-    }
+    private Post post;
 }

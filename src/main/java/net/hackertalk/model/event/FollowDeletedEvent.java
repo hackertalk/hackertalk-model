@@ -3,12 +3,13 @@ package net.hackertalk.model.event;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import net.hackertalk.model.client.User;
 
 @Data
 @Builder
 @EqualsAndHashCode(callSuper = true)
-public class UserDisabledEvent extends NotificationEvent {
+public class FollowDeletedEvent extends NotificationEvent {
 
-    private User user;
+    private Long fromId;
+
+    private Long toId;
 }

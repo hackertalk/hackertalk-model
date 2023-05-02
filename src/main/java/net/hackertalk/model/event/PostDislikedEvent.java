@@ -1,25 +1,16 @@
 package net.hackertalk.model.event;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import net.hackertalk.model.post.Post;
 
-public class PostDislikedEvent extends NotificationEvent<Post> {
+@Data
+@Builder
+@EqualsAndHashCode(callSuper = true)
+public class PostDislikedEvent extends NotificationEvent {
 
     private Long fromId;
 
-    @JsonCreator
-    public PostDislikedEvent(@JsonProperty("source") Post source,
-                             @JsonProperty("fromId") Long fromId) {
-        super(source, "POST_DISLIKED");
-        this.fromId = fromId;
-    }
-
-    public Long getFromId() {
-        return fromId;
-    }
-
-    public void setFromId(Long fromId) {
-        this.fromId = fromId;
-    }
+    private Post post;
 }

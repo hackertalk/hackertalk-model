@@ -1,26 +1,16 @@
 package net.hackertalk.model.event;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import net.hackertalk.model.comment.Comment;
 import net.hackertalk.model.notification.BlockedReason;
 
-public class CommentBlockedEvent extends NotificationEvent<Comment> {
+@Data
+@Builder
+@EqualsAndHashCode(callSuper = true)
+public class CommentBlockedEvent extends NotificationEvent {
 
+    private Comment comment;
     private BlockedReason reason;
-
-    @JsonCreator
-    public CommentBlockedEvent(@JsonProperty("source") Comment source,
-                               @JsonProperty("reason") BlockedReason reason) {
-        super(source, "COMMENT_BLOCKED");
-        this.reason = reason;
-    }
-
-    public BlockedReason getReason() {
-        return reason;
-    }
-
-    public void setReason(BlockedReason reason) {
-        this.reason = reason;
-    }
 }
