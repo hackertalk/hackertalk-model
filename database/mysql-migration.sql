@@ -20,3 +20,6 @@ alter table application.like_notification alter column unread type boolean using
 alter table application.system_notification alter column unread type boolean using unread::int::boolean;
 
 alter table application.chat alter column deleted type boolean using deleted::int::boolean;
+
+alter table if exists application.like_notification add constraint like_notification_ukey unique (from_id, target_id, target_type, action);
+

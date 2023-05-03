@@ -31,7 +31,6 @@ public class UserAccessHistory {
     @Column(name = "ip", nullable = false, length = 63, updatable = false)
     private String ip; // max 63
 
-    @Lob
     @Column(name = "user_agent", nullable = false, updatable = false)
     private String userAgent; // 4kb - 64kb
 
