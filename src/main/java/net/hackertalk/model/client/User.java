@@ -34,10 +34,10 @@ public class User {
     @Column(name = "bio", nullable = false, length = 256)
     private String bio;
 
-    @Column(name = "avatar", nullable = false, length = 32)
+    @Column(name = "avatar", nullable = false, length = 64)
     private String avatar;
 
-    @Column(name = "cover", nullable = false, length = 32)
+    @Column(name = "cover", nullable = false, length = 64)
     private String cover;
 
     @Column(name = "gender", nullable = false)
