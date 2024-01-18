@@ -22,9 +22,7 @@
         <repository>
             <id>tonggan-maven-central-store-private</id>
             <name>tonggan-maven-central-store-private</name>
-            <url>
-                https://tonggan-694979835041.d.codeartifact.us-east-1.amazonaws.com/maven/maven-central-store-private/
-            </url>
+            <url>https://tonggan-694979835041.d.codeartifact.us-east-1.amazonaws.com/maven/maven-central-store-private/</url>
         </repository>
     </distributionManagement>
 
