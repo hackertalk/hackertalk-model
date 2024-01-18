@@ -3,10 +3,10 @@ package net.hackertalk.model.topic;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
+import jakarta.persistence.*;
 import lombok.*;
 import net.hackertalk.model.tag.Tag;
 
-import javax.persistence.*;
 import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;

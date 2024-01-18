@@ -3,10 +3,9 @@ package net.hackertalk.model.notification;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
+import jakarta.persistence.*;
 import lombok.*;
 import net.hackertalk.model.TargetType;
-
-import javax.persistence.*;
 
 @Entity
 @Getter

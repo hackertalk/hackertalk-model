@@ -4,11 +4,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
+import jakarta.persistence.*;
 import lombok.*;
 import net.hackertalk.model.client.User;
 import net.hackertalk.model.tag.Tag;
 
-import javax.persistence.*;
 import java.io.Serializable;
 import java.util.LinkedHashSet;
 import java.util.Objects;

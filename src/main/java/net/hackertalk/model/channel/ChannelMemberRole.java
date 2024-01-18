@@ -1,8 +1,8 @@
 package net.hackertalk.model.channel;
 
+import jakarta.persistence.*;
 import lombok.*;
 
-import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity

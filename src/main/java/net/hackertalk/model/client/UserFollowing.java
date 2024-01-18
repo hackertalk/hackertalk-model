@@ -1,8 +1,8 @@
 package net.hackertalk.model.client;
 
+import jakarta.persistence.*;
 import lombok.*;
 
-import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
