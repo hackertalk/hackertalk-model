@@ -1,0 +1,54 @@
+apiVersion: 1
+
+datasources:
+  - name: Prometheus
+    type: prometheus
+    access: proxy
+    url: http://prometheus:9090
+    editable: false
+
+  - name: Jaeger
+    type: jaeger
+    access: proxy
+    url: http://jaeger-all-in-one:16686
+    editable: false
+
+  - name: Zipkin
+    type: zipkin
+    access: proxy
+    url: http://zipkin-all-in-one:9411
+    editable: false
+
+  - name: Redis
+    type: redis-datasource
+    access: proxy
+    orgId: 1
+    version: 1
+    editable: false
+    url: redis://redis:6379
+    jsonData:
+      acl: true
+      client: standalone
+      tlsAuth: false
+      user: rediser
+    secureJsonData:
+      password: 123456
+
+  - name: Postgres
+    type: grafana-postgresql-datasource
+    access: proxy
+    editable: true
+    url: postgres:5432
+    user: postgres
+    secureJsonData:
+      password: 123456
+    jsonData:
+      connMaxLifetime: 14400
+      database: postgres
+      maxIdleConns: 100
+      maxIdleConnsAuto: true
+      maxOpenConns: 100
+      postgresVersion: 1500
+      sslmode: disable
+    readOnly: false
+    version: 4
